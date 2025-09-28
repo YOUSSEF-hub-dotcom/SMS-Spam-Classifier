@@ -1,0 +1,12 @@
+pandas
+numpy
+nltk
+scikit-learn
+matplotlib
+seaborn
+wordcloud
+fastapi
+uvicorn
+streamlit
+joblib
+requests
