@@ -1,4 +1,4 @@
-# SMS Spam Classifier
+# SMS Spam Classifier App
 
 A complete **SMS Spam Classification System** using **Python, Machine Learning, FastAPI, and Streamlit**.  
 This project covers **data preprocessing, exploratory data analysis (EDA), machine learning model training, API creation, and interactive frontend**.
