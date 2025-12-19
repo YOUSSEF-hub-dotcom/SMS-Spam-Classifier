@@ -1,0 +1,121 @@
+SMS Spam Classifier App
+
+A complete SMS Spam Classification System using Python, Machine Learning, FastAPI, and Streamlit. This project covers data preprocessing, EDA, ML model training, API creation, and interactive frontend.
+
+Features & Steps Implemented ⿡ Data Preparation & Cleaning
+
+Loaded dataset spam.csv with columns label (ham/spam) and message.
+
+Checked dataset shape, columns, missing values, and duplicates.
+
+Removed unnecessary columns (Unnamed: 2,3,4) and duplicate rows.
+
+Result: Cleaned dataset with no missing values or duplicates.
+
+⿢ Exploratory Data Analysis (EDA)
+
+Frequency counts of labels (ham vs spam).
+
+Calculated characters, words, sentences per message.
+
+Statistical summary for all data, separately for ham and spam.
+
+Visualizations:
+
+Pie chart for label distribution
+
+Histograms for number of characters and words by label
+
+Pairplot for feature correlations
+
+Correlation heatmap
+
+WordCloud of all preprocessed messages
+
+⿣ Text Preprocessing
+
+Convert text to lowercase
+
+Tokenization into words
+
+Remove special characters & punctuation
+
+Remove stopwords (NLTK)
+
+Stemming using PorterStemmer
+
+Rejoined tokens to create final_message for ML
+
+⿤ Machine Learning Model
+
+Algorithm: Multinomial Naive Bayes
+
+Text converted to numeric using TF-IDF
+
+Split: 80% training, 20% testing, stratified
+
+Hyperparameter tuning using GridSearchCV for alpha values [0.01, 0.05, 0.1, 0.2, 0.5, 1.0]
+
+Saved best model and vectorizer with MLflow & Joblib
+
+Results:
+
+Best Parameters: {'nb__alpha': 0.1} Accuracy: 0.9729206963249516
+
+Classification Report: precision recall f1-score support
+
+       0       0.98      0.99      0.98       903
+       1       0.95      0.83      0.89       131
+
+accuracy                           0.97      1034
+macro avg 0.96 0.91 0.94 1034 weighted avg 0.97 0.97 0.97 1034
+
+Confusion Matrix: [[897 6] [ 22 109]]
+
+⿥ FastAPI Backend
+
+Created FastAPI app with /predict POST endpoint
+
+Input: JSON with "message": "text here"
+
+Output: JSON with "label" (Ham/Spam) and "probability" (confidence score)
+
+Handles empty messages with proper HTTP error
+
+⿦ Streamlit Frontend
+
+Interactive web app
+
+Users input SMS in a textbox and click Predict
+
+Connects to FastAPI backend for real-time prediction
+
+Displays:
+
+Green message if Ham
+
+Red message if Spam
+
+Confidence score
+
+Technologies Used
+
+Python
+
+Data Processing: Pandas, NumPy
+
+Text Processing: NLTK (tokenization, stopwords, stemming)
+
+Machine Learning: Scikit-learn (MultinomialNB, TF-IDF, GridSearchCV)
+
+Visualization: Matplotlib, Seaborn, WordCloud
+
+API: FastAPI
+
+Frontend: Streamlit
+
+Serialization & Model Tracking: Joblib, MLflow
+
+Author
+
+Engineer Youssef Mahmoud LinkedIn Profile:[https://www.linkedin.com/in/youssef-mahmoud-63b243361?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FUlAji10RDyqpcifIh5pCQ%3D%3D]
